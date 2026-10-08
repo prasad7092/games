@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<title>Bubs' Little Adventures ♡</title>
+<meta name="theme-color" content="#f6a5b1">
+<meta name="description" content="A tiny world of adventures made just for Bubs ♡">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 7' shape-rendering='crispEdges'%3E%3Cpath fill='%23e8647c' d='M1 0h2v1h1V0h2v1h1v2H6v1H5v1H4v1H3V5H2V4H1V3H0V1h1z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="ambient" aria-hidden="true"></canvas>
+
+<header id="topbar">
+  <div class="brand">♡ BUBS' WORLD</div>
+  <button id="btn-back" class="pbtn small hidden" type="button">← Back to Bubs' World</button>
+  <div class="tb-right">
+    <button id="btn-sound" class="pbtn icon" type="button" aria-label="Sound on/off" title="Sound on/off">🔊</button>
+    <button id="btn-home" class="pbtn icon" type="button" aria-label="Home" title="Home">🏠</button>
+  </div>
+</header>
+
+<main>
+  <!-- TITLE -->
+  <section id="screen-title" class="screen active">
+    <div class="title-wrap">
+      <h1 class="logo">BUBS'<br>LITTLE<br>ADVENTURES</h1>
+      <p class="subtitle">A tiny world of adventures made just for Bubs ♡</p>
+      <canvas id="title-bubs" width="160" height="180" aria-label="Bubs waving"></canvas>
+      <button id="btn-start" class="pbtn big blink" type="button">PRESS START ♡</button>
+      <p class="tiny">best with sound on · arrow keys / WASD + space · or touch</p>
+    </div>
+  </section>
+
+  <!-- HUB -->
+  <section id="screen-hub" class="screen">
+    <div class="hub">
+      <div class="hub-head">
+        <h2 class="hub-title">BUBS' LITTLE ADVENTURES</h2>
+        <p class="subtitle small">A tiny world of adventures made just for Bubs ♡</p>
+      </div>
+      <div class="hub-grid">
+        <aside class="side">
+          <div class="pbox portrait-box">
+            <div id="speech" class="speech">Choose an adventure ♡</div>
+            <canvas id="portrait" width="160" height="190" title="Click me!"></canvas>
+            <div class="tiny">click Bubs for a new outfit</div>
+          </div>
+          <div class="pbox book" id="book">
+            <h3>BUBS' ADVENTURE BOOK</h3>
+            <ul id="book-list"></ul>
+            <div id="book-ending" class="book-ending"></div>
+            <button id="btn-reset" class="linkish" type="button">reset progress</button>
+          </div>
+        </aside>
+        <div class="cards" id="cards"></div>
+      </div>
+      <button id="btn-ending" class="pbtn big hidden pulse" type="button">★ WATCH THE ENDING ★</button>
+    </div>
+  </section>
+
+  <!-- GAME -->
+  <section id="screen-game" class="screen">
+    <div id="stage">
+      <canvas id="game" width="480" height="270"></canvas>
+      <div id="overlay" class="overlay hidden"></div>
+    </div>
+    <div id="touch" aria-hidden="true"></div>
+  </section>
+
+  <!-- FINAL -->
+  <section id="screen-final" class="screen">
+    <div class="final">
+      <h2 class="final-title">BUBS COMPLETED<br>THE WHOLE ADVENTURE! ♡</h2>
+      <canvas id="final-canvas" width="480" height="270"></canvas>
+      <div class="final-icons">🏍️ 🌻 🪂 🐎 🏸</div>
+      <p class="final-msg">Five adventures down… and I'd still choose you for the next one. ♡</p>
+      <button id="btn-final-back" class="pbtn big" type="button">Back to Bubs' World</button>
+    </div>
+  </section>
+</main>
+
+<canvas id="wipe" aria-hidden="true"></canvas>
+<div class="crt" aria-hidden="true"></div>
+
+<!-- shared world -->
+<script src="js/core/util.js"></script>
+<script src="js/core/audio.js"></script>
+<script src="js/core/input.js"></script>
+<script src="js/core/art.js"></script>
+<script src="js/core/bubs.js"></script>
+<script src="js/core/vehicles.js"></script>
+<script src="js/core/sidescroller.js"></script>
+<script src="js/core/shell.js"></script>
+<!-- sprite overrides: drop your custom Bubs sprites in here later -->
+<script src="assets/sprites/overrides.js"></script>
+<!-- games -->
+<script src="js/games/riding.js"></script>
+<script src="js/games/sunflower.js"></script>
+<script src="js/games/bungee.js"></script>
+<script src="js/games/horse.js"></script>
+<script src="js/games/badminton.js"></script>
+<script src="js/core/previews.js"></script>
+<script src="js/core/ui.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
